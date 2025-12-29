@@ -1,5 +1,4 @@
 @extends('layout.app')
-
 @section('content')
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div class="bg-white shadow-md rounded-lg overflow-hidden">
@@ -33,25 +32,25 @@
                     </thead>
 
                     <tbody class="bg-white divide-y divide-gray-200">
-                        @forelse ($suratkeluars as $suratkeluar)
+                        @forelse ($suratmasuks as $suratmasuk)
                             <tr class="hover:bg-gray-50">
                                 <td class="px-4 py-2 text-sm text-gray-700">
-                                    {{ $loop->iteration + ($suratkeluars->currentPage() - 1) * $suratkeluars->perPage() }}
+                                    {{ $loop->iteration + ($suratmasuks->currentPage() - 1) * $suratmasuks->perPage() }}
                                 </td>
                                 <td class="px-4 py-2 text-sm text-gray-700">
-                                    {{ $suratkeluar->judul }}
+                                    {{ $suratmasuk->judul }}
                                 </td>
                                 <td class="px-4 py-2 text-sm text-gray-700">
-                                    {{ $suratkeluar->nomor_surat }}
+                                    {{ $suratmasuk->nomor_surat }}
                                 </td>
                                 <td class="px-4 py-2 text-sm text-gray-700">
-                                    {{ $suratkeluar->kategori->nama_kategori }}
+                                    {{ $suratmasuk->kategori->nama_kategori }}
                                 </td>
                                 <td class="px-4 py-2 text-sm text-gray-700">
-                                    {{ $suratkeluar->tujuan_surat }}
+                                    {{ $suratmasuk->asal_surat }}
                                 </td>
                                 <td class="px-4 py-2 text-sm text-gray-700">
-                                    {{ \Carbon\Carbon::parse($suratkeluar->tanggal_surat)->format('d M Y') }}
+                                    {{ \Carbon\Carbon::parse($suratmasuk->tanggal_surat)->format('d M Y') }}
                                 </td>
                                 <td class="px-4 py-2 text-center text-sm">
                                     <div class="flex justify-center gap-2">
@@ -101,7 +100,7 @@
 
                 <!-- Pagination -->
                 <div class="mt-4">
-                    {{ $suratkeluars->links() }}
+                    {{ $suratmasuks->links() }}
                 </div>
             </div>
         </div>
