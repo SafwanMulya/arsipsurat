@@ -1,0 +1,28 @@
+models:
+  Kategori:
+    nama_kategori: string
+    deskripsi: text
+    relationships:
+      hasmany: SuratMasuk,SuratKeluar
+
+  SuratMasuk:
+    kategori_id: foreign
+    judul: string
+    nomor_surat: string
+    tanggal_surat: date
+    asal_surat: string
+    perihal: text
+    file_surat: file
+    keterangan: text
+
+  SuratKeluar:
+    kategori_id: foreign
+    judul: string
+    nomor_surat: string
+    tanggal_surat: date
+    tujuan_surat: string
+    perihal: text
+    file_surat: file
+    keterangan: text
+
+

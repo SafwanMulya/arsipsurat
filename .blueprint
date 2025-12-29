@@ -1,0 +1,15 @@
+created:
+    - database/factories/KategoriFactory.php
+    - database/factories/SuratMasukFactory.php
+    - database/factories/SuratKeluarFactory.php
+    - database/migrations/2025_12_27_153730_create_kategoris_table.php
+    - database/migrations/2025_12_27_153731_create_surat_masuks_table.php
+    - database/migrations/2025_12_27_153732_create_surat_keluars_table.php
+    - app/Models/Kategori.php
+    - app/Models/SuratMasuk.php
+    - app/Models/SuratKeluar.php
+models:
+    User: { name: string, email: string, email_verified_at: 'timestamp nullable', password: string, remember_token: 'string:100 nullable' }
+    Kategori: { nama_kategori: string, deskripsi: text, relationships: { hasmany: 'SuratMasuk,SuratKeluar' } }
+    SuratMasuk: { kategori_id: foreign, judul: string, nomor_surat: string, tanggal_surat: date, asal_surat: string, perihal: text, file_surat: file, keterangan: text }
+    SuratKeluar: { kategori_id: foreign, judul: string, nomor_surat: string, tanggal_surat: date, tujuan_surat: string, perihal: text, file_surat: file, keterangan: text }
