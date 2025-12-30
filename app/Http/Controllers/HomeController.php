@@ -11,6 +11,9 @@ class HomeController extends Controller
     {
         $suratmasuks = SuratMasuk::latest()->paginate(5);
         $suratkeluars = SuratKeluar::latest()->paginate(5);
-        return view('Home.index', compact('suratmasuks', 'suratkeluars'));
+        $totalSuratMasuk = SuratMasuk::count();
+        $totalSuratKeluar = SuratKeluar::count();
+
+        return view('Home.index', compact('suratmasuks', 'suratkeluars','totalSuratMasuk','totalSuratKeluar'));
     }
 }

@@ -33,7 +33,8 @@
 
                 </div>
                 <div>
-                    <h1 class="text-3xl font-bold text-white">4%</h1>
+
+                    <h1 class="text-3xl font-bold text-white">{{ $totalSuratMasuk}} Surat</h1>
                     <p class="text-white/90 text-sm">Klik untuk melihat detail arsip</p>
                 </div>
             </div>
@@ -48,8 +49,8 @@
 
                 </div>
                 <div>
-                    <h1 class="text-3xl font-bold text-white">10%</h1>
-                    <p class="text-white/90 text-sm">Surat Masuk</p>
+                    <h1 class="text-3xl font-bold text-white">{{ $totalSuratKeluar }} Surat</h1>
+                    <p class="text-white/90 text-sm">Klik untuk melihat detail arsip</p>
                 </div>
             </div>
             <!-- BOX 3 -->
@@ -64,7 +65,7 @@
                 </div>
                 <div>
                     <h1 class="text-3xl font-bold text-white">7%</h1>
-                    <p class="text-white/90 text-sm">Surat Keluar</p>
+                    <p class="text-white/90 text-sm">Klik untuk melihat detail arsip</p>
                 </div>
             </div>
         </div>
@@ -123,7 +124,7 @@
                                         <div class="flex justify-center gap-2">
 
                                             <!-- LIHAT -->
-                                            <a href="#"
+                                            <a href="{{ Storage::url($suratmasuk->file_surat) }}"
                                                 class="inline-flex items-center gap-1 px-3 py-1 text-sm font-medium text-white bg-gradient-to-r from-green-800 to-green-400 rounded-md">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none"
                                                     viewBox="0 0 24 24" stroke="currentColor">
@@ -138,7 +139,7 @@
                                             </a>
 
                                             <!-- DOWNLOAD -->
-                                            <a href="#"
+                                            <a href="{{ route('suratmasuk.download', $suratmasuk->id) }}"
                                                 class="inline-flex items-center gap-1 px-3 py-1 text-sm font-medium text-white bg-gradient-to-r from-yellow-600 to-yellow-400 rounded-md">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none"
                                                     viewBox="0 0 24 24" stroke="currentColor">

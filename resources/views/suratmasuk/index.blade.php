@@ -18,6 +18,38 @@
 
             <!-- Table -->
             <div class="p-6 overflow-x-auto">
+                <!-- FORM PENCARIAN -->
+                <form method="GET" action="{{ route('suratmasuks.index') }}" class="mb-4 flex items-center gap-2">
+
+                    <!-- Pencarian Tanggal -->
+                    <input type="date" name="tanggal_surat" value="{{ request('tanggal_surat') }}"
+                        class="border border-gray-300 rounded-md px-3 py-2 focus:ring-blue-500 focus:border-blue-500" />
+
+                    <!-- Pencarian Kategori -->
+                    <select name="kategori_id"
+                        class="border border-gray-300 rounded-md px-3 py-2 focus:ring-blue-500 focus:border-blue-500">
+                        <option value="">-- Pilih Kategori --</option>
+                        @foreach ($kategoris as $kategori)
+                            <option value="{{ $kategori->id }}"
+                                {{ request('kategori_id') == $kategori->id ? 'selected' : '' }}>
+                                {{ $kategori->nama_kategori }}
+                            </option>
+                        @endforeach
+                    </select>
+                    <!-- Tombol Cari -->
+                    <button type="submit" class="bg-gradient-to-r from-blue-800 to-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-500">
+                        Cari
+                    </button>
+                    <!-- Tombol Reset -->
+                    @if (request('tanggal_surat') || request('kategori_id'))
+                        <a href="{{ route('suratmasuks.index') }}"
+                            class="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-400">
+                            Reset
+                        </a>
+                    @endif
+                </form>
+
+
                 <table class="min-w-full divide-y divide-gray-200">
                     <thead class="bg-gray-50">
                         <tr>
@@ -63,9 +95,9 @@
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                     d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5
-                               c4.478 0 8.268 2.943 9.542 7
-                               -1.274 4.057-5.064 7-9.542 7
-                               -4.477 0-8.268-2.943-9.542-7z" />
+                                       c4.478 0 8.268 2.943 9.542 7
+                                       -1.274 4.057-5.064 7-9.542 7
+                                       -4.477 0-8.268-2.943-9.542-7z" />
                                             </svg>
                                             Lihat
                                         </a>

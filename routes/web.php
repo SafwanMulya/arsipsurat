@@ -14,4 +14,10 @@ Route::resource('kategoris', KategoriController::class);
 Route::resource('suratkeluars', SuratKeluarController::class);
 Route::resource('suratmasuks', SuratMasukController::class);
 
+Route::get('/suratmasuk/view/{id}', [App\Http\Controllers\SuratMasukController::class, 'view'])->name('suratmasuk.view');
+Route::get('/suratmasuk/download/{id}', [App\Http\Controllers\SuratMasukController::class, 'download'])->name('suratmasuk.download');
+
+Route::get('/suratkeluar/view/{id}', [App\Http\Controllers\SuratKeluarController::class, 'view'])->name('suratkeluar.view');
+Route::get('/suratkeluar/download/{id}', [App\Http\Controllers\SuratKeluarController::class, 'download'])->name('suratkeluar.download');
+
 
