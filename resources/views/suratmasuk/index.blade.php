@@ -1,6 +1,6 @@
 @extends('layout.app')
 @section('content')
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="w-full">
         <div class="bg-white shadow-md rounded-lg overflow-hidden">
 
             <!-- Header -->
@@ -103,7 +103,7 @@
                                         </a>
 
                                         <!-- DOWNLOAD -->
-                                        <a href="#"
+                                        <a href="{{ route('suratmasuk.download', $suratmasuk->file_surat) }}"
                                             class="inline-flex items-center gap-1 px-3 py-1 text-sm font-medium text-white bg-gradient-to-r from-yellow-600 to-yellow-400 rounded-md">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none"
                                                 viewBox="0 0 24 24" stroke="currentColor">

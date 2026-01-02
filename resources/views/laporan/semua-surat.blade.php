@@ -30,6 +30,8 @@
     <h2>Laporan Surat Masuk & Surat Keluar</h2>
     <hr>
 
+    <p>Tanggal Cetak : {{ now()->format('d M Y') }}</p>
+
     {{-- Tabel Surat Masuk --}}
     <div class="title">Laporan Surat Masuk</div>
     <table>
@@ -40,7 +42,7 @@
                 <th>Nomor Surat</th>
                 <th>Asal Surat</th>
                 <th>Kategori</th>
-                <th>Tanggal</th>
+                <th>Tanggal Masuk</th>
             </tr>
         </thead>
         <tbody>
@@ -67,7 +69,7 @@
                 <th>Nomor Surat</th>
                 <th>Tujuan Surat</th>
                 <th>Kategori</th>
-                <th>Tanggal</th>
+                <th>Tanggal Keluar</th>
             </tr>
         </thead>
         <tbody>
