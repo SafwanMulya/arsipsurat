@@ -24,6 +24,7 @@ class SuratKeluar extends Model
         'perihal',
         'file_surat',
         'keterangan',
+        'status',
     ];
 
     /**

@@ -8,6 +8,7 @@ use App\Filament\Resources\SuratKeluars\Pages\ListSuratKeluars;
 use App\Filament\Resources\SuratKeluars\Schemas\SuratKeluarForm;
 use App\Filament\Resources\SuratKeluars\Tables\SuratKeluarsTable;
 use App\Models\SuratKeluar;
+use Filament\Forms\Components\Select;
 use BackedEnum;
 use UnitEnum;
 use Filament\Resources\Resource;
@@ -18,7 +19,7 @@ use Filament\Tables\Table;
 class SuratKeluarResource extends Resource
 {
     protected static ?string $model = SuratKeluar::class;
-    
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedPaperAirplane;
 
     protected static ?string $navigationLabel = 'Surat Keluar';

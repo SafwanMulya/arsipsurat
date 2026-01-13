@@ -25,12 +25,14 @@ class AdminPanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         return $panel
-        ->spa()
+            ->spa()
             ->default()
             ->id('admin')
             ->path('admin')
             ->login()
-            ->brandName('Arsip Surat')
+            ->brandLogo(asset('images/ChatGPT Image 13 Jan 2026, 21.36.50.png'))
+            ->brandName(null) // menghilangkan teks "Arsip Surat"
+            ->brandLogoHeight('40px')
             ->colors([
                 'primary' => Color::Blue,
             ])

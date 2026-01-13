@@ -39,6 +39,16 @@ class SuratKeluarForm
                 Textarea::make('keterangan')
                     ->required()
                     ->columnSpanFull(),
+                Select::make('status')
+                    ->label('Status')
+                    ->options([
+                        'dalam_perjalanan' => 'Dalam Perjalanan',
+                        'tersampaikan' => 'Tersampaikan',
+                        'dibaca_pimpinan' => 'Dibaca Pimpinan',
+                        'ditolak' => 'Ditolak',
+                    ])
+                    ->default('dalam_perjalanan')
+                    ->required(),
             ]);
     }
 }

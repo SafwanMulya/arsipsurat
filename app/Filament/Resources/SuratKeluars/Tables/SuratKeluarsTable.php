@@ -8,6 +8,7 @@ use Filament\Actions\EditAction;
 use Illuminate\Support\Facades\Storage;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Filament\Tables\Columns\BadgeColumn;
 
 class SuratKeluarsTable
 {
@@ -42,6 +43,23 @@ class SuratKeluarsTable
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+                TextColumn::make('status')
+                    ->label('Status')
+                    ->badge()
+                    ->color(fn(string $state): string => match ($state) {
+                        'dalam_perjalanan' => 'warning',
+                        'tersampaikan' => 'info',
+                        'dibaca_pimpinan' => 'success',
+                        'ditolak' => 'danger',
+                        default => 'gray',
+                    })
+                    ->formatStateUsing(
+                        fn($state) =>
+                        ucwords(str_replace('_', ' ', $state))
+                    ),
+
+
+
             ])
             ->filters([
                 //

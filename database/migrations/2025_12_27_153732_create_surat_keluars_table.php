@@ -23,6 +23,12 @@ return new class extends Migration
             $table->text('perihal');
             $table->string('file_surat')->nullable();
             $table->text('keterangan');
+            $table->enum('status', [
+                'dalam_perjalanan',
+                'tersampaikan',
+                'dibaca_pimpinan',
+                'ditolak'
+            ])->default('dalam_perjalanan');
             $table->timestamps();
         });
 
